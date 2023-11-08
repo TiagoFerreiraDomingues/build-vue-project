@@ -10,6 +10,10 @@ var webpack = require('webpack')
 var config = require('../config')
 var webpackConfig = require('./webpack.prod.conf')
 
+// Ajoutez ces deux lignes pour afficher la version
+var packageVersion = require('../package.json').version;
+console.log('Building version', packageVersion);
+
 var spinner = ora('building for production...')
 spinner.start()
 
@@ -26,6 +30,7 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
       chunkModules: false
     }) + '\n\n')
 
+    console.log('Building version', webpackConfig.version);
     console.log(chalk.cyan('  Build complete.\n'))
     console.log(chalk.yellow(
       '  Tip: built files are meant to be served over an HTTP server.\n' +
