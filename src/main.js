@@ -92,7 +92,7 @@ msalInstance.addEventCallback((event) => {
 Vue.use(msalPlugin, msalInstance)
 
 Vue.use(VueMatomo, {
-  host: 'https://matomo.razel-bec.com',
+  host: '',
   siteId: 2,
 
   // Changes the default .js and .php endpoint's filename
@@ -204,8 +204,8 @@ require('moment/locale/fr')
 store.state.assets = ApiPlugin.usedApiUrl.replace('/api/', '/assets/')
 store.state.maintenanceResa = {
   active: false,
-  dates: [1545289200, 1545411600], // [20 dec 2018 8h, 21 dec 2018 20h]
-  auth: ['CHAPEAU-D\'HAESE']
+  dates: [], // [20 dec 2018 8h, 21 dec 2018 20h]
+  auth: []
 }
 Vue.http.options.credentials = false
 
